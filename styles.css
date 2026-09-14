@@ -113,7 +113,7 @@ h1 {
 h1 span { display: block; }
 .second-line { color: #c8c3d1; }
 .description {
-  max-width: 34rem;
+  max-width: 58rem;
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.9;
@@ -121,6 +121,8 @@ h1 span { display: block; }
   margin: 38px 0 0;
   word-break: keep-all;
 }
+
+.description span { display: block; }
 
 footer {
   border-top: 1px solid rgba(255, 255, 255, .14);
