@@ -10,7 +10,7 @@
   color-scheme: dark;
   --background: #09090d;
   --foreground: #f5f4f7;
-  --muted: #aaa8b3;
+  --muted: #bdbac6;
   --purple: #7a4e94;
   --cyan: #5fb8ba;
   font-family: "Instrument Sans", sans-serif;
@@ -38,12 +38,12 @@ body {
   overflow: hidden;
   pointer-events: none;
   background-image:
-    linear-gradient(90deg, #09090d 3%, rgba(9, 9, 13, .92) 30%, rgba(9, 9, 13, .32) 100%),
-    linear-gradient(0deg, #09090d 1%, transparent 38%, rgba(9, 9, 13, .45) 75%, #09090d 100%),
+    linear-gradient(90deg, rgba(9, 9, 13, .72) 0%, rgba(9, 9, 13, .52) 30%, rgba(9, 9, 13, .08) 100%),
+    linear-gradient(0deg, rgba(9, 9, 13, .8) 0%, transparent 32%, rgba(9, 9, 13, .12) 75%, rgba(9, 9, 13, .65) 100%),
     url("./assets/space.webp");
   background-size: cover;
   background-position: center, center, 62% center;
-  opacity: .65;
+  opacity: .95;
 }
 
 .page {
@@ -105,7 +105,7 @@ h1 {
 }
 
 h1 span { display: block; }
-.second-line { color: #aaa6b5; }
+.second-line { color: #c8c3d1; }
 .description {
   max-width: 34rem;
   color: var(--muted);
@@ -141,11 +141,11 @@ footer p { margin: 0; }
   .description { margin-top: 30px; }
   .universe {
     background-image:
-      linear-gradient(90deg, rgba(9, 9, 13, .76), rgba(9, 9, 13, .36)),
-      linear-gradient(0deg, #09090d 2%, transparent 45%, #09090d 100%),
+      linear-gradient(90deg, rgba(9, 9, 13, .48), rgba(9, 9, 13, .15)),
+      linear-gradient(0deg, rgba(9, 9, 13, .85) 0%, transparent 40%, rgba(9, 9, 13, .72) 100%),
       url("./assets/space.webp");
     background-position: center, center, 64% center;
-    opacity: .55;
+    opacity: .9;
   }
   footer { flex-wrap: wrap; column-gap: 16px; row-gap: 16px; padding-block: 23px 27px; }
 }
