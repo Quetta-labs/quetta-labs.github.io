@@ -31,12 +31,18 @@ body {
 
 ::selection { background: var(--purple); color: white; }
 
-.universe {
-  position: absolute;
+.space-viewport {
+  position: fixed;
   z-index: -1;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  contain: paint;
+}
+
+.universe {
+  position: absolute;
+  inset: 0;
   background-image:
     linear-gradient(90deg, rgba(9, 9, 13, .72) 0%, rgba(9, 9, 13, .52) 30%, rgba(9, 9, 13, .08) 100%),
     linear-gradient(0deg, rgba(9, 9, 13, .8) 0%, transparent 32%, rgba(9, 9, 13, .12) 75%, rgba(9, 9, 13, .65) 100%),
@@ -151,3 +157,22 @@ footer p { margin: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Native scroll animation: one image layer, transform only, no scroll handler.
+   Unsupported browsers and reduced-motion users keep the static one-screen site. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .page { min-height: 145svh; }
+    .space-scroll { height: 45svh; flex-shrink: 0; }
+    .universe {
+      inset: -7% 0;
+      animation: space-drift linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+
+@keyframes space-drift {
+  from { transform: translate3d(0, 4%, 0) scale(1); }
+  to { transform: translate3d(0, -4%, 0) scale(1.06); }
+}
